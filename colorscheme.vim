@@ -9,7 +9,7 @@
 "set background=light
 "colorscheme solarized
 set background=dark
-if $ISWIN
+if $ISWIN==1
     colorscheme palenight
 elseif
     colorscheme darkblue
