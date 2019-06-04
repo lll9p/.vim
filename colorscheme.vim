@@ -9,7 +9,11 @@
 "set background=light
 "colorscheme solarized
 set background=dark
-colorscheme palenight
+if $ISWIN
+    colorscheme palenight
+elseif
+    colorscheme darkblue
+endif
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
