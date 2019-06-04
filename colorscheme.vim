@@ -11,7 +11,7 @@
 set background=dark
 if $ISWIN==1
     colorscheme palenight
-elseif
+else
     colorscheme darkblue
 endif
 if (has("nvim"))

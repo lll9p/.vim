@@ -19,6 +19,8 @@
 "        exec(f.read(), dict(__file__=activate_this))
 "EOF
 "endif
-let g:python3_host_prog = "C:\\Users\\lao\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
-let g:virtualenv_directory = "C:\\Users\\lao\\virtualenvs"
+if $ISWIN==1
+    let g:python3_host_prog = "C:\\Users\\lao\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
+    let g:virtualenv_directory = "C:\\Users\\lao\\virtualenvs"
+endif
 "VirtualEnvActivate py3.7
