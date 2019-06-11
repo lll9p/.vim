@@ -6,7 +6,6 @@
 " Last Modified By  : lll9p <lll9p.china@gmail.com>
 
 source ~/.vim/env.vim
-source ~/.vim/os.vim
 source ~/.vim/lang_encoding.vim
 source ~/.vim/base.vim
 source ~/.vim/dein.vim

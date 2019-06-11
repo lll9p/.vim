@@ -9,7 +9,7 @@
 "set background=light
 "colorscheme solarized
 set background=dark
-if $ISWIN==1
+if g:os=='Windows'
     colorscheme palenight
 else
     colorscheme darkblue

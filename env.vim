@@ -19,8 +19,24 @@
 "        exec(f.read(), dict(__file__=activate_this))
 "EOF
 "endif
-if $ISWIN==1
+if !exists("g:os")
+    if has("win64") || has("win32") || has("win16")
+        let g:os = "Windows"
+    else
+        let g:os = substitute(system('uname'), '\n', '', '')
+    endif
+endif
+if has("gui_running")
+    if g:os == "Darwin"
+        let $SLASH='/'
+    elseif g:os == "Linux"
+        let $SLASH='/'
+    elseif g:os == "Windows"
+        let $SLASH='\'
+    endif
+endif
+if g:os == "Windows"
     let g:python3_host_prog = "C:\\Users\\lao\\AppData\\Local\\Programs\\Python\\Python37\\python.exe"
-    let g:virtualenv_directory = "C:\\Users\\lao\\virtualenvs"
+    "let g:virtualenv_directory = "C:\\Users\\lao\\virtualenvs"
 endif
 "VirtualEnvActivate py3.7

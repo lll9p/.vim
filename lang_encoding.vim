@@ -11,11 +11,9 @@
 let $LANG='zh_CN.UTF-8'
 " 字符编码
 " Vim显示的编码(设置这个不会改变文件的编码)
-if $ISWIN
+if g:os=='Windows'
 set encoding=utf-8
 set termencoding=chinese
-endif
-if $ISWIN
 set renderoptions=type:directx
 endif
 set bomb
@@ -26,7 +24,7 @@ set bomb
         " }
         " 编辑已存在的文件时的参考文件编码.需要注意顺序,前面的字符集应该比后面的字符集大{
         set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
-        if $ISWIN
+        if g:os=='Windows'
             " 解决consle输出乱码{
             language messages zh_CN.utf-8
             " }
