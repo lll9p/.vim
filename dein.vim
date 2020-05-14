@@ -68,6 +68,7 @@ if dein#load_state('~/.cache/dein')
     "}
     call dein#add('vim-latex/vim-latex',{'on_ft':['latex','tex']})
     call dein#add('alpertuna/vim-header')
+    call dein#add('syngan/vim-vimlint')
 
     if !has('nvim')
         call dein#add('roxma/nvim-yarp')
@@ -75,10 +76,10 @@ if dein#load_state('~/.cache/dein')
     endif
 
     call dein#end()
+    call denite#custom#var('file_rec', 'command', ['rg', '--files', '--glob', '!.git'])
     call dein#save_state()
 endif
 
 filetype plugin indent on
 syntax enable
 " vim: set ft=vim :
-

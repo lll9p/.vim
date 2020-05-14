@@ -41,7 +41,7 @@ imap <expr><TAB>
             \    "\<Plug>(neosnippet_expand_or_jump)" :
             \    (<SID>check_back_space() ?
             \        "\<TAB>" :
-            \        (deoplete#mappings#manual_complete())
+            \        (deoplete#manual_complete())
             \    )
             \ )
 imap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -52,4 +52,3 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
     set conceallevel=2 concealcursor=niv
 endif
-

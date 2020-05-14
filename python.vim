@@ -10,6 +10,7 @@
 "=============================================================================
 autocmd BufNewFile,BufRead *.py,*.pyw setlocal filetype=python
 " python
+autocmd FileType python let $PYTHONIOENCODING = "utf-8"
 " vim-python
 augroup vimrc-python
     autocmd!
