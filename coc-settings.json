@@ -1,0 +1,35 @@
+{ // Enable preselect feature on neovim, default: `true`
+        "suggest.enablePreselect": true,
+        // Add preview option to `completeopt`, default: `false`
+        "suggest.enablePreview": true,
+        // completion automatically select the first completed
+        "suggest.noselect": false,
+        // "suggest.triggerAfterInsertEnter": true
+        "suggest.minTriggerInputLength": 2,
+        "diagnostic.errorSign": "✖",
+        "diagnostic.warningSign": "⚠",
+        "diagnostic.infoSign": "ℹ",
+        "diagnostic.hintSign": "➤",
+        "suggest.echodocSupport": true,
+        "codeLens.enable": true,
+        "signature.enable": true,
+        "suggest.preferCompleteThanJumpPlaceholder": true,
+        // Target to show hover information, default is floating window when possible.
+        "coc.preferences.hoverTarget": "preview",
+        "coc.preferences.formatOnSaveFiletypes": [
+                "python",
+                "rust"
+        ],
+        // Auto close preview window on cursor move.,  default: `true`
+        "coc.preferences.previewAutoClose": false,
+        "rust-analyzer.serverPath": "~/.cargo/bin/rust-analyzer.exe",
+        "rust-analyzer.lruCapacity": 1000, // 分析器最大缓存深度
+        "python.venvFolders": [
+                "venv38",
+                "VirtualEnvs",
+                "envs",
+                ".pyenv",
+                ".direnv"
+        ],
+        "python.venvPath": "~/VirtualEnvs"
+}
