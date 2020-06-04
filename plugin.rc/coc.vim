@@ -184,38 +184,6 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 
-let g:coc_global_extensions = ['coc-json', 'coc-snippets', 'coc-template', 'coc-python', 'coc-git']
+" let g:coc_global_extensions = ['coc_list', 'coc-json', 'coc-snippets', 'coc-template', 'coc-python', 'coc-git']
 
-let g:coc_common = {
-      \  "suggest.enablePreselect": v:true,
-      \  "suggest.enablePreview": v:true,
-      \  "suggest.noselect": v:false,
-      \  "suggest.minTriggerInputLength": 2,
-      \  "diagnostic.errorSign": "✖",
-      \  "diagnostic.warningSign": "⚠",
-      \  "diagnostic.infoSign": "ℹ",
-      \  "diagnostic.hintSign": "➤",
-      \  "suggest.echodocSupport": v:true,
-      \  "codeLens.enable": v:true,
-      \  "signature.enable": v:true,
-      \  "suggest.preferCompleteThanJumpPlaceholder": v:true,
-      \  "coc.preferences.hoverTarget": "preview",
-      \  "coc.preferences.formatOnSaveFiletypes": [
-      \          "python",
-      \          "rust"
-      \  ],
-      \  "coc.preferences.previewAutoClose": v:false,
-      \  "rust-analyzer.serverPath": "~/.cargo/bin/rust-analyzer.exe",
-      \  "rust-analyzer.lruCapacity": 1000,
-      \ }
-let g:coc_python = {
-      \  "python.venvFolders": [
-      \          "venv38",
-      \          "VirtualEnvs",
-      \          "envs",
-      \          ".pyenv",
-      \          ".direnv"
-      \  ],
-      \  "python.venvPath": "~/VirtualEnvs"
-      \ }
-let g:coc_user_config = extend(g:coc_common, g:coc_python)
+let g:coc_config_home="~/.vim"

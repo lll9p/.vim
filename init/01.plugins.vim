@@ -16,7 +16,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
   " call dein#add('w0rp/ale')
   call dein#add('rust-lang/rust.vim',{'on_ft':['rust']})
-  call dein#add('Shougo/denite.nvim')
+  " call dein#add('Shougo/denite.nvim')
+  " call dein#add('Shougo/neomru.vim')
   call dein#add('tpope/vim-surround')
   call dein#add('godlygeek/tabular')
   call dein#add('qpkorr/vim-renamer')
@@ -42,7 +43,7 @@ if dein#load_state('~/.cache/dein')
   endif
 
   call dein#end()
-  call denite#custom#var('file_rec', 'command', ['rg', '--files', '--glob', '!.git'])
+  " call denite#custom#var('file_rec', 'command', ['rg', '--files', '--glob', '!.git'])
   call dein#save_state()
 endif
 
