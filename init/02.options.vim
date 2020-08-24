@@ -254,3 +254,6 @@ if has('nvim')
   inoremap <silent><RightMouse> <Esc>:call GuiShowContextMenu()<CR>
   vnoremap <silent><RightMouse> :call GuiShowContextMenu()<CR>
 endif
+
+
+

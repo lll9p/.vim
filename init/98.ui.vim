@@ -4,19 +4,7 @@
 " Date              : 22.03.2019
 " Last Modified Date: 04.06.2020
 " Last Modified By  : lll9p <lll9p.china@gmail.com>
-"if has("gui_running")
-"     if has("gui_gtk2")
-"         set guifont=Luxi\ Mono\ 12
-"     elseif has("x11")
-"         " Also for GTK 1
-"         set guifont=*-lucidatypewriter-medium-r-normal-*-*-180-*-*-m-*-*
-"     elseif has("gui_win32")
-"         "set guifontwide=Microsoft\ YaHei:h13
-"         set guifontwide=SimSun_simple:h12
-"         set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h13
-"     endif
-" endif
-" GUI设置{{{
+
 if has('gui_running')
   " 设定菜单的语言为英文菜单{
   set langmenu=en_US.utf-8
@@ -24,52 +12,18 @@ if has('gui_running')
   " 删去菜单{
   aunmenu *
   tlunmenu *
-
-  unlet! g:did_install_default_menus
-  unlet! g:did_install_syntax_menu
-
-  if exists('g:did_menu_trans')
-    menutrans clear
-    unlet g:did_menu_trans
-  endif
-
-  unlet! g:find_help_dialog
-
-  unlet! g:menutrans_fileformat_choices
-  unlet! g:menutrans_fileformat_dialog
-  unlet! g:menutrans_help_dialog
-  unlet! g:menutrans_no_file
-  unlet! g:menutrans_path_dialog
-  unlet! g:menutrans_set_lang_to
-  unlet! g:menutrans_spell_add_ARG_to_word_list
-  unlet! g:menutrans_spell_change_ARG_to
-  unlet! g:menutrans_spell_ignore_ARG
-  unlet! g:menutrans_tags_dialog
-  unlet! g:menutrans_textwidth_dialog
-  " }
-  " 重建菜单{
-  "source $VIMRUNTIME."/menu.vim"
-  " }
   " 隐藏菜单栏{
-  "set guioptions-=m
-  " }
-  " 隐藏工具栏{
+  set guioptions-=m
+  " 隐藏工具栏
   set guioptions-=T
-  " }
-  " 隐藏左侧滚动条{
+  " 隐藏左侧滚动条
   set guioptions-=L
-  " }
-  " 隐藏右侧滚动条{
+  " 隐藏右侧滚动条
   set guioptions-=r
-  " }
-  " 隐藏底部滚动条{
+  " 隐藏底部滚动条
   set guioptions-=b
-  " }
-  " 隐藏GUI Tab栏  {
+  " 隐藏GUI Tab栏
   "set guioptions-=e
-  " }
-  "FiraCode_Nerd_Font_Mono
-  " set guifont=Fira_Code:h10:cANSI:qDRAFT
   set guifontwide=等距更纱黑体_SC:h12:cDEFAULT
   set guifont=等距更纱黑体_SC:h12:cANSI
   set linespace=0
@@ -83,17 +37,9 @@ if has('gui_running')
     " taamode = int (0 - DEFAULT, 1 - CLEARTYPE, 2 - GRAYSCALE, 3 - ALIASED) (
   endif
 endif
-" }}}
-" 显示CMD tab栏{
-"set showtabline=1
-" }
-" ©Lao https://laolilin.com
-" File              : colorscheme.vim
-" Author            : lll9p <lll9p.china@gmail.com>
-" Date              : 23.03.2019
-" Last Modified Date: 23.03.2019
-" Last Modified By  : lll9p <lll9p.china@gmail.com>
-
+" Tabline/Buffer line
+set showtabline=2
+set tabline="%1T"
 if (has("nvim"))
   "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -106,13 +52,6 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
-
-" ©Lao https://laolilin.com
-" File              : style.vim
-" Author            : lll9p <lll9p.china@gmail.com>
-" Date              : 03.06.2020
-" Last Modified Date: 03.06.2020
-" Last Modified By  : lll9p <lll9p.china@gmail.com>
 " Default value is "normal", Setting this option to "high" or "low" does use the
 " same Solarized palette but simply shifts some values up or down in order to
 " expand or compress the tonal range displayed.
@@ -132,7 +71,7 @@ let g:neosolarized_vertSplitBgTrans = 1
 " Default values:
 let g:neosolarized_bold = 1
 let g:neosolarized_underline = 1
-let g:neosolarized_italic = 0
+let g:neosolarized_italic = 1
 
 " Used to enable/disable "bold as bright" in Neovim terminal. If colors of bold
 " text output by commands like `ls` aren't what you expect, you might want to
@@ -140,7 +79,7 @@ let g:neosolarized_italic = 0
 let g:neosolarized_termBoldAsBright = 1
 colorscheme NeoSolarized
 set ruler
-" statusline{
+" statusline
 function! Statusline()
   set statusline=
   set statusline+=%7*\[%n]                                  "buffernr
@@ -151,12 +90,11 @@ function! Statusline()
   set statusline+=%4*\ %{&ff}\                              "FileFormat (dos/unix..)
   set statusline+=%5*\ %{&spelllang}\%{HighlightSearch()}\  "Spellanguage & Highlight on?
   set statusline+=%#warningmsg#
-  set statusline+=%{g:coc_git_status}
-  set statusline+=%{coc#status()}%{get(b:,'coc_current_function','')}
-  " set statusline+=%{LinterStatus()}
+  set statusline+=%0*%{get(g:,'coc_git_status','')}
+  set statusline+=%3*%{coc#status()}%{get(b:,'coc_current_function','')}
   set statusline+=%*
-  set statusline+=%8*\ %=\ R:%l/%L\ (%03p%%)\              "Rownumber/total (%)
-  set statusline+=%9*\ C:%03c\                             "Colnr
+  set statusline+=%8*\ %=\ %l/%L\ (%03p%%)\              "Rownumber/total (%)
+  set statusline+=%9*\ %03c\                             "Colnr
   set statusline+=%0*\ \ %m%r%w\ %P\ \                     "Modified? Readonly? Top/bot.
 endfunction
 call Statusline()
@@ -187,5 +125,9 @@ set t_8f=[38;2;%lu;%lu;%lum
 set t_8b=[48;2;%lu;%lu;%lum
 
 set colorcolumn=80
-set background=dark
-
+if has('gui_running')
+  set background=light
+else
+  set background=dark
+endif
+set ambiwidth=double

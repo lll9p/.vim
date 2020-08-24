@@ -24,6 +24,9 @@
         "coc.preferences.previewAutoClose": false,
         "rust-analyzer.serverPath": "~/.cargo/bin/rust-analyzer.exe",
         "rust-analyzer.lruCapacity": 1000, // 分析器最大缓存深度
+        "rust-analyzer.checkOnSave.allTargets": false,
+        //"rust-analyzer.checkOnSave.extraArgs": ["--target",
+        //    "thumbv7em-none-eabihf"],
         "python.venvFolders": [
                 "venv38",
                 "VirtualEnvs",

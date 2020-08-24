@@ -15,7 +15,8 @@ call defx#custom#option('_', {
       \ 'buffer_name': 'defxplorer',
       \ 'ignored_files': '*.pyc,*.pyd,*~,*.swo,*.swp,.git,.hg,.svn,.bzr,.DS_Store',
       \ 'toggle':1,
-      \ 'resume':1
+      \ 'resume':1,
+      \ 'root_marker':''
       \ })
 
 call defx#custom#column('mark', {
@@ -140,48 +141,3 @@ if !has('nvim')
   " Avoid the white space highting issue
   autocmd FileType defx match ExtraWhitespace /^^/
 endif
-
-" Defx git
-let g:defx_git#indicators = {
-      \ 'Modified'  : '✹',
-      \ 'Staged'    : '✚',
-      \ 'Untracked' : '✭',
-      \ 'Renamed'   : '➜',
-      \ 'Unmerged'  : '═',
-      \ 'Ignored'   : '☒',
-      \ 'Deleted'   : '✖',
-      \ 'Unknown'   : '?'
-      \ }
-let g:defx_git#column_length = 0
-highlight default link Defx_filename_directory NERDTreeDirSlash
-highlight default link Defx_git_Modified Special
-highlight default link Defx_git_Staged Function
-highlight default link Defx_git_Renamed Title
-highlight default link Defx_git_Unmerged Label
-highlight default link Defx_git_Untracked Tag
-highlight default link Defx_git_Ignored Comment
-
-"Defx icons
-let g:defx_icons_enable_syntax_highlight = 1
-let g:defx_icons_column_length = 2
-let g:defx_icons_directory_icon = ''
-let g:defx_icons_mark_icon = '*'
-let g:defx_icons_copy_icon = ''
-let g:defx_icons_move_icon = ''
-let g:defx_icons_parent_icon = ''
-let g:defx_icons_default_icon = ''
-let g:defx_icons_directory_symlink_icon = ''
-" Options below are applicable only when using "tree" feature
-let g:defx_icons_root_opened_tree_icon = ''
-let g:defx_icons_nested_opened_tree_icon = ''
-let g:defx_icons_nested_closed_tree_icon = ''
-
-highlight default link DefxIconsMarkIcon Statement
-highlight default link DefxIconsCopyIcon WarningMsg
-highlight default link DefxIconsMoveIcon ErrorMsg
-highlight default link DefxIconsDirectory Directory
-highlight default link DefxIconsParentDirectory Directory
-highlight default link DefxIconsSymlinkDirectory Directory
-highlight default link DefxIconsOpenedTreeIcon Directory
-highlight default link DefxIconsNestedTreeIcon Directory
-highlight default link DefxIconsClosedTreeIcon Directory

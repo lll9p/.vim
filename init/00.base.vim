@@ -2,7 +2,7 @@
 " File              : 00.base.vim
 " Author            : lll9p <lll9p.china@gmail.com>
 " Date              : 22.03.2019
-" Last Modified Date: 03.06.2020
+" Last Modified Date: 04.06.2020
 " Last Modified By  : lll9p <lll9p.china@gmail.com>
 if !exists("g:os")
   if has("win64") || has("win32") || has("win16")
@@ -42,13 +42,6 @@ endif
   "    \ runtimepath+=~/.local/share/nvim/site/after runtimepath+=~/.vim/after
   "  let &packpath = &runtimepath
   "endif
-
-  " ©Lao https://laolilin.com
-  " File              : base.vim
-  " Author            : lll9p <lll9p.china@gmail.com>
-  " Date              : 22.03.2019
-  " Last Modified Date: 23.03.2019
-  " Last Modified By  : lll9p <lll9p.china@gmail.com>
 
   " help lang
   set helplang=cn,en

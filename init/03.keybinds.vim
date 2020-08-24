@@ -72,6 +72,11 @@ map! <S-Insert> <MiddleMouse>
 " 打开和关闭标签{
 map tn :tabnew
 map td :tabclose
+" 打开和关闭标签{
+nnoremap bn :bnext<CR>
+nnoremap bp :bprevious<CR>
+nnoremap bd :bdelete
+nnoremap bl :buffers<CR>
 " }
 " 窗口分割设置{
 map <c-j> <c-w>j
